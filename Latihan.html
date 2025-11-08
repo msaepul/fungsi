@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran: Fungsi dan Relasi untuk Anak-Anak - Latihan</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to bottom, #f0f8ff, #e6f7ff);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background-color: #ff6347;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 12px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #ff4500;
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a.active {
+            background-color: #ff4500;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            color: #ff6347;
+            animation: bounceIn 1s;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            70% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            animation: fadeInUp 1s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .interactive {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 2px solid #4CAF50;
+            transition: transform 0.3s;
+        }
+
+        .interactive:hover {
+            transform: scale(1.02);
+        }
+
+        button {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        input {
+            padding: 10px;
+            font-size: 1.1em;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            margin: 10px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .result {
+            font-weight: bold;
+            color: #ff6347;
+            margin-top: 10px;
+            animation: slideIn 0.5s;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .character {
+            font-size: 60px;
+            margin: 10px;
+            animation: wiggle 2s infinite;
+        }
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(-5deg);
+            }
+
+            75% {
+                transform: rotate(5deg);
+            }
+        }
+
+        .emoji {
+            font-size: 30px;
+            vertical-align: middle;
+        }
+
+        .quiz {
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .quiz input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 10px;
+            margin: 10px 0;
+            height: 20px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #4CAF50;
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.5s;
+        }
+
+        .score {
+            font-size: 20px;
+            color: #4CAF50;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .draggable,
+        .dropzone {
+            display: inline-block;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            user-select: none;
+        }
+
+        .draggable {
+            background-color: #ffeb3b;
+            color: #333;
+        }
+
+        .dropzone {
+            background-color: #e1f5fe;
+            color: #0277bd;
+            min-height: 60px;
+        }
+
+        .draggable:hover,
+        .dropzone:hover {
+            transform: scale(1.1);
+        }
+
+        .dragging {
+            opacity: 0.5;
+            transform: rotate(5deg);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Beranda</a></li>
+            <li><a href="explorasi.html">🔍 Explorasi</a></li>
+            <li><a href="Latihan.html">🎮 Latihan</a></li>
+            <li><a href="tentang.html">ℹ️ Tentang</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="latihan">
+            <h1>Latihan: Uji Pengetahuanmu! <span class="emoji">🎮</span></h1>
+            <p>Waktunya latihan seru! Jawab pertanyaan, seret dan jatuhkan, dan hitung fungsi. Yuk, tunjukkan
+                kemampuanmu! <span class="character">💪</span></p>
+
+            <div class="section">
+                <h2>Latihan 1: Quiz Pengetahuan <span class="emoji">🧠</span></h2>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <div class="quiz">
+                    <p>1. Apa itu relasi? <span class="emoji">🤔</span></p>
+                    <input type="radio" name="q1" value="a"> Hubungan antara dua hal<br>
+                    <input type="radio" name="q1" value="b"> Hanya angka<br>
+                    <input type="radio" name="q1" value="c"> Warna saja<br>
+
+                    <p>2. Dalam fungsi, setiap input punya berapa output? <span class="emoji">🔍</span></p>
+                    <input type="radio" name="q2" value="a"> Banyak<br>
+                    <input type="radio" name="q2" value="b"> Satu<br>
+                    <input type="radio" name="q2" value="c"> Nol<br>
+
+                    <p>3. Contoh fungsi sederhana adalah? <span class="emoji">✨</span></p>
+                    <input type="radio" name="q3" value="a"> x + 1<br>
+                    <input type="radio" name="q3" value="b"> Acak<br>
+                    <input type="radio" name="q3" value="c"> Tidak ada<br>
+
+                    <p>4. Jika relasi antara buah dan warna, apa contohnya? <span class="emoji">🍎</span></p>
+                    <input type="radio" name="q4" value="a"> Apel → Merah<br>
+                    <input type="radio" name="q4" value="b"> Apel → Biru<br>
+                    <input type="radio" name="q4" value="c"> Apel → Hijau<br>
+
+                    <p>5. Fungsi f(x) = x * 3, jika x=2, hasilnya? <span class="emoji">🧮</span></p>
+                    <input type="radio" name="q5" value="a"> 5<br>
+                    <input type="radio" name="q5" value="b"> 6<br>
+                    <input type="radio" name="q5" value="c"> 8<br>
+                </div>
+                <button onclick="checkQuiz()">Periksa Jawaban <span class="emoji">✅</span></button>
+                <div id="quizResult" class="score"></div>
+            </div>
+
+            <div class="section">
+                <h2>Latihan 2: Mapping Relasi <span class="emoji">🎯</span></h2>
+                <p>Seret angka ke warna yang sesuai! Misalnya, 1 ke Merah, 2 ke Biru. <span class="character">🎨</span>
+                </p>
+                <div class="interactive">
+                    <div id="dragDropArea">
+                        <div class="draggable" draggable="true" id="num1">1 <span class="emoji">🔵</span></div>
+                        <div class="draggable" draggable="true" id="num2">2 <span class="emoji">🔴</span></div>
+                        <div class="draggable" draggable="true" id="num3">3 <span class="emoji">🟡</span></div>
+                        <div class="dropzone" id="red">Merah <span class="emoji">❤️</span></div>
+                        <div class="dropzone" id="blue">Biru <span class="emoji">💙</span></div>
+                        <div class="dropzone" id="yellow">Kuning <span class="emoji">💛</span></div>
+                    </div>
+                    <div id="mappingResult" class="result"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Latihan 3: Hitung Fungsi <span class="emoji">🔢</span></h2>
+                <p>Masukkan angka dan lihat hasil fungsi. Coba beberapa kali! <span class="character">🤖</span></p>
+                <div class="interactive">
+                    <input type="number" id="inputNum" placeholder="Masukkan angka">
+                    <button onclick="calculateFunction()">Hitung f(x) = x * 2 + 1 <span class="emoji">➕</span></button>
+                    <div id="functionResult" class="result"></div>
+                    <button onclick="calculateFunction2()">Hitung f(x) = x + 5 <span class="emoji">✖️</span></button>
+                    <div id="functionResult2" class="result"></div>
+                </div>
+            </div>
+
+            <button onclick="nextPage()">Selesai! Lanjut ke Tentang <span class="emoji">📚</span></button>
+        </section>
+    </div>
+
+    <script>
+        // Fungsi untuk memeriksa quiz
+        function checkQuiz() {
+            const answers = {
+                q1: 'a',
+                q2: 'b',
+                q3: 'a',
+                q4: 'a',
+                q5: 'b'
+            };
+            let score = 0;
+            for (let q in answers) {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                if (selected && selected.value === answers[q]) {
+                    score++;
+                }
+            }
+            const percentage = (score / 5) * 100;
+            document.getElementById('progressFill').style.width = `${percentage}%`;
+            document.getElementById('quizResult').innerText = `Skor kamu: ${score}/5. ${score === 5 ? 'Hebat! 🎉' : 'Coba lagi! 💪'}`;
+            playSound(score === 5 ? 'success' : 'tryagain');
+        }
+
+        // Drag and Drop untuk mapping
+        const draggables = document.querySelectorAll('.draggable');
+        const dropzones = document.querySelectorAll('.dropzone');
+        let mapping = {};
+
+        draggables.forEach(draggable => {
+            draggable.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text/plain', draggable.id);
+                draggable.classList.add('dragging');
+            });
+            draggable.addEventListener('dragend', () => {
+                draggable.classList.remove('dragging');
+            });
+        });
+
+        dropzones.forEach(dropzone => {
+            dropzone.addEventListener('dragover', e => {
+                e.preventDefault();
+                dropzone.style.backgroundColor = '#b3e5fc';
+            });
+            dropzone.addEventListener('dragleave', () => {
+                dropzone.style.backgroundColor = '#e1f5fe';
+            });
+            dropzone.addEventListener('drop', e => {
+                e.preventDefault();
+                dropzone.style.backgroundColor = '#e1f5fe';
+                const dragged = document.querySelector('.dragging');
+                mapping[dragged.id] = dropzone.id;
+                document.getElementById('mappingResult').innerText = `Mapping: ${JSON.stringify(mapping)} 🎯`;
+                playSound('drop');
+            });
+        });
+
+        // Fungsi untuk menghitung fungsi
+        function calculateFunction() {
+            const x = parseInt(document.getElementById('inputNum').value);
+            if (isNaN(x)) {
+                document.getElementById('functionResult').innerText = "Masukkan angka yang valid! 😅";
+                return;
+            }
+            const result = x * 2 + 1;
+            document.getElementById('functionResult').innerText = `f(${x}) = ${result} 🎉`;
+            playSound('success');
+        }
+
+        function calculateFunction2() {
+            const x = parseInt(document.getElementById('inputNum').value);
+            if (isNaN(x)) {
+                document.getElementById('functionResult2').innerText = "Masukkan angka yang valid! 😅";
+                return;
+            }
+            const result = x + 5;
+            document.getElementById('functionResult2').innerText = `f(${x}) = ${result} 🎉`;
+            playSound('success');
+        }
+
+        // Fungsi untuk navigasi ke halaman berikutnya
+        function nextPage() {
+            alert("Bagus! Sekarang lihat halaman Tentang. Klik menu Tentang ya! 📖");
+            document.querySelector('a[href="#tentang"]').click();
+        }
+
+        // Tambahkan efek suara simulasi (ganti dengan audio jika ada)
+        function playSound(type) {
+            console.log(`Playing ${type} sound`);
+        }
+    </script>
+    <script>
+        const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+
+        document.querySelectorAll("nav a").forEach(link => {
+            const href = link.getAttribute("href").toLowerCase();
+            if (href === currentPage) {
+                link.classList.add("active");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran: Fungsi dan Relasi untuk Anak-Anak - Explorasi</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to bottom, #f0f8ff, #e6f7ff);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background-color: #ff6347;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 12px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #ff4500;
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a.active {
+            background-color: #ff4500;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            color: #ff6347;
+            animation: bounceIn 1s;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            70% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            animation: fadeInUp 1s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .interactive {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 2px solid #4CAF50;
+            transition: transform 0.3s;
+        }
+
+        .interactive:hover {
+            transform: scale(1.02);
+        }
+
+        button {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        input {
+            padding: 10px;
+            font-size: 1.1em;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            margin: 10px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .result {
+            font-weight: bold;
+            color: #ff6347;
+            margin-top: 10px;
+            animation: slideIn 0.5s;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .character {
+            font-size: 60px;
+            margin: 10px;
+            animation: wiggle 2s infinite;
+        }
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(-5deg);
+            }
+
+            75% {
+                transform: rotate(5deg);
+            }
+        }
+
+        .emoji {
+            font-size: 30px;
+            vertical-align: middle;
+        }
+
+        .example-box {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #ffc107;
+        }
+
+        ul {
+            text-align: left;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Beranda</a></li>
+            <li><a href="explorasi.html">🔍 Explorasi</a></li>
+            <li><a href="Latihan.html">🎮 Latihan</a></li>
+            <li><a href="tentang.html">ℹ️ Tentang</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="explorasi">
+            <h1>Explorasi: Fungsi dan Relasi <span class="emoji">🔍</span></h1>
+            <p>Selamat datang di dunia eksplorasi! Di sini kita akan belajar apa itu Relasi dan Fungsi dengan cara yang
+                menyenangkan. Mari mulai! <span class="character">🤓</span></p>
+
+            <div class="section">
+                <h2>Apa Itu Relasi? <span class="emoji">🔗</span></h2>
+                <p>Relasi adalah hubungan antara dua hal. Bayangkan seperti menghubungkan nama hewan dengan suaranya,
+                    atau angka dengan warnanya. Relasi bisa satu ke banyak, artinya satu hal bisa punya banyak hubungan!
+                </p>
+                <div class="example-box">
+                    <p><strong>Contoh Sederhana:</strong> Relasi antara hewan dan suara.</p>
+                    <button onclick="showRelationExamples()">Lihat Contoh Relasi Hewan <span
+                            class="emoji">🐶</span></button>
+                    <div id="relationResult" class="result"></div>
+                </div>
+                <div class="example-box">
+                    <p><strong>Contoh Lain:</strong> Relasi antara buah dan warna.</p>
+                    <button onclick="showFruitRelation()">Lihat Contoh Relasi Buah <span
+                            class="emoji">🍎</span></button>
+                    <div id="fruitResult" class="result"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Apa Itu Fungsi? <span class="emoji">⚙️</span></h2>
+                <p>Fungsi adalah jenis relasi khusus. Dalam fungsi, setiap input (masukan) hanya punya satu output
+                    (keluaran). Seperti mesin yang mengubah angka menjadi angka lain dengan aturan tertentu. Fungsi
+                    selalu satu ke satu!</p>
+                <div class="example-box">
+                    <p><strong>Contoh Sederhana:</strong> Fungsi f(x) = x + 1. Jika x=2, maka f(2)=3.</p>
+                    <div class="interactive">
+                        <p>Coba masukkan angka dan lihat hasil fungsi f(x) = x * 2 + 1:</p>
+                        <input type="number" id="inputNum" placeholder="Masukkan angka">
+                        <button onclick="calculateFunction()">Hitung Fungsi <span class="emoji">🔢</span></button>
+                        <div id="functionResult" class="result"></div>
+                    </div>
+                </div>
+                <div class="example-box">
+                    <p><strong>Contoh Lain:</strong> Fungsi f(x) = x + 5.</p>
+                    <div class="interactive">
+                        <p>Coba fungsi ini:</p>
+                        <input type="number" id="inputNum2" placeholder="Masukkan angka">
+                        <button onclick="calculateFunction2()">Hitung Fungsi x + 5 <span class="emoji">➕</span></button>
+                        <div id="functionResult2" class="result"></div>
+                    </div>
+                </div>
+                <div class="example-box">
+                    <p><strong>Contoh Kuadrat:</strong> Fungsi f(x) = x².</p>
+                    <div class="interactive">
+                        <p>Coba fungsi kuadrat:</p>
+                        <input type="number" id="inputNum3" placeholder="Masukkan angka">
+                        <button onclick="calculateFunction3()">Hitung Fungsi x² <span class="emoji">✖️</span></button>
+                        <div id="functionResult3" class="result"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Perbedaan Relasi dan Fungsi <span class="emoji">🤔</span></h2>
+                <p>Relasi bisa bebas, tapi fungsi harus ketat: satu input, satu output. Jika ada input yang punya dua
+                    output, itu bukan fungsi!</p>
+                <div class="example-box">
+                    <p><strong>Contoh:</strong> Relasi: Orang → Hobi (satu orang bisa punya banyak hobi). Fungsi: Usia →
+                        Tahun Lahir (satu usia, satu tahun).</p>
+                </div>
+            </div>
+
+            <button onclick="window.location.href='latihan.html'">
+                Lanjut ke Latihan! <span class="emoji">🎮</span>
+            </button>
+
+        </section>
+    </div>
+
+    <script>
+        // Fungsi untuk menampilkan contoh relasi hewan
+        function showRelationExamples() {
+            const relations = [
+                { hewan: "Kucing", suara: "Meong", emoji: "🐱" },
+                { hewan: "Anjing", suara: "Guk", emoji: "🐶" },
+                { hewan: "Sapi", suara: "Moo", emoji: "🐄" },
+                { hewan: "Ayam", suara: "Kukuruyuk", emoji: "🐔" },
+                { hewan: "Kuda", suara: "Hihihi", emoji: "🐴" }
+            ];
+            let result = "<h3>Relasi Hewan dan Suara:</h3><ul>";
+            relations.forEach(rel => {
+                result += `<li>${rel.emoji} ${rel.hewan} → ${rel.suara} <span class="emoji">🔊</span></li>`;
+            });
+            result += "</ul>";
+            document.getElementById('relationResult').innerHTML = result;
+            document.getElementById('relationResult').style.animation = 'slideIn 0.5s';
+            playSound('example');
+        }
+
+        // Fungsi untuk menampilkan contoh relasi buah
+        function showFruitRelation() {
+            const fruits = [
+                { buah: "Apel", warna: "Merah", emoji: "🍎" },
+                { buah: "Pisang", warna: "Kuning", emoji: "🍌" },
+                { buah: "Jeruk", warna: "Orange", emoji: "🍊" },
+                { buah: "Anggur", warna: "Ungu", emoji: "🍇" }
+            ];
+            let result = "<h3>Relasi Buah dan Warna:</h3><ul>";
+            fruits.forEach(fruit => {
+                result += `<li>${fruit.emoji} ${fruit.buah} → ${fruit.warna} <span class="emoji">🎨</span></li>`;
+            });
+            result += "</ul>";
+            document.getElementById('fruitResult').innerHTML = result;
+            document.getElementById('fruitResult').style.animation = 'slideIn 0.5s';
+            playSound('example');
+        }
+
+        // Fungsi untuk menghitung fungsi matematika
+        function calculateFunction() {
+            const x = parseInt(document.getElementById('inputNum').value);
+            if (isNaN(x)) {
+                document.getElementById('functionResult').innerText = "Masukkan angka yang valid! 😅";
+                return;
+            }
+            const result = x * 2 + 1;
+            document.getElementById('functionResult').innerText = `f(${x}) = ${result} 🎉`;
+            playSound('success');
+        }
+
+        function calculateFunction2() {
+            const x = parseInt(document.getElementById('inputNum2').value);
+            if (isNaN(x)) {
+                document.getElementById('functionResult2').innerText = "Masukkan angka yang valid! 😅";
+                return;
+            }
+            const result = x + 5;
+            document.getElementById('functionResult2').innerText = `f(${x}) = ${result} 🎉`;
+            playSound('success');
+        }
+
+        function calculateFunction3() {
+            const x = parseInt(document.getElementById('inputNum3').value);
+            if (isNaN(x)) {
+                document.getElementById('functionResult3').innerText = "Masukkan angka yang valid! 😅";
+                return;
+            }
+            const result = x * x;
+            document.getElementById('functionResult3').innerText = `f(${x}) = ${result} 🎉`;
+            playSound('success');
+        }
+
+        // Fungsi untuk navigasi ke halaman berikutnya
+        function nextPage() {
+            alert("Bagus! Sekarang lanjut ke Latihan. Klik menu Latihan ya! 🎉");
+            document.querySelector('a[href="#latihan"]').click();
+        }
+
+        // Tambahkan efek suara simulasi (ganti dengan audio jika ada)
+        function playSound(type) {
+            console.log(`Playing ${type} sound`);
+        }
+    </script>
+    <script>
+        const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+
+        document.querySelectorAll("nav a").forEach(link => {
+            const href = link.getAttribute("href").toLowerCase();
+            if (href === currentPage) {
+                link.classList.add("active");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

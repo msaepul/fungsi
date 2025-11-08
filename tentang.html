@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran: Fungsi dan Relasi untuk Anak-Anak - Tentang</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to bottom, #f0f8ff, #e6f7ff);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background-color: #ff6347;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 12px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #ff4500;
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a.active {
+            background-color: #ff4500;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            color: #ff6347;
+            animation: bounceIn 1s;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            70% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            animation: fadeInUp 1s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .character {
+            font-size: 60px;
+            margin: 10px;
+            animation: wiggle 2s infinite;
+        }
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(-5deg);
+            }
+
+            75% {
+                transform: rotate(5deg);
+            }
+        }
+
+        .emoji {
+            font-size: 30px;
+            vertical-align: middle;
+        }
+
+        .info-box {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 2px solid #4CAF50;
+        }
+
+        .creator-box {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 2px solid #ffc107;
+        }
+
+        button {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Beranda</a></li>
+            <li><a href="explorasi.html">🔍 Explorasi</a></li>
+            <li><a href="Latihan.html">🎮 Latihan</a></li>
+            <li><a href="tentang.html">ℹ️ Tentang</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="tentang">
+            <h1>Tentang Modul Ini <span class="emoji">📚</span></h1>
+            <p>Selamat datang di halaman Tentang! Di sini kamu bisa tahu lebih banyak tentang aplikasi ini. <span
+                    class="character">🙌</span></p>
+
+            <div class="section">
+                <h2>Apa Itu Modul Ini? <span class="emoji">🤔</span></h2>
+                <div class="info-box">
+                    <p>Modul Pembelajaran Fungsi dan Relasi ini adalah media interaktif yang dirancang khusus untuk
+                        anak-anak. Dengan menggunakan HTML, CSS, dan JavaScript, modul ini membantu anak-anak belajar
+                        konsep matematika dasar tentang Fungsi dan Relasi melalui cara yang menyenangkan dan mudah
+                        dipahami.</p>
+                    <p>Fitur utama meliputi penjelasan interaktif, contoh-contoh, latihan quiz, drag-and-drop, dan
+                        kalkulasi fungsi. Semua dibuat dengan desain ramah anak, animasi, dan emoji untuk membuat
+                        belajar jadi seru!</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Tujuan Pembuatan <span class="emoji">🎯</span></h2>
+                <div class="info-box">
+                    <p>Aplikasi ini dibuat sebagai salah satu media untuk skripsi. Tujuannya adalah untuk mengembangkan
+                        media pembelajaran interaktif yang efektif dalam meningkatkan pemahaman anak-anak terhadap
+                        konsep Fungsi dan Relasi di matematika.</p>
+                    <p>Dengan pendekatan digital dan interaktif, diharapkan modul ini bisa menjadi alternatif
+                        pembelajaran yang lebih menarik dibanding metode tradisional, serta mendukung pembelajaran jarak
+                        jauh atau self-paced learning.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Tentang Pembuat <span class="emoji">👨‍🎓</span></h2>
+                <div class="creator-box">
+                    <p>Modul ini dibuat oleh [Nama Anda], mahasiswa [Universitas/Nama Program Studi] sebagai bagian dari
+                        penelitian skripsi. Skripsi ini fokus pada pengembangan media pembelajaran berbasis web untuk
+                        anak-anak.</p>
+                    <p>Jika ada pertanyaan, saran, atau ingin berkolaborasi, silakan hubungi melalui email atau platform
+                        terkait. Terima kasih telah menggunakan modul ini! <span class="emoji">😊</span></p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Teknologi yang Digunakan <span class="emoji">💻</span></h2>
+                <div class="info-box">
+                    <p>Modul ini dibangun menggunakan:</p>
+                    <ul style="text-align: left; display: inline-block;">
+                        <li><strong>HTML:</strong> Untuk struktur halaman web.</li>
+                        <li><strong>CSS:</strong> Untuk styling dan animasi yang menarik.</li>
+                        <li><strong>JavaScript:</strong> Untuk interaktivitas seperti tombol, drag-and-drop, dan
+                            kalkulasi.</li>
+                    </ul>
+                    <p>Semua kode sumber terbuka dan bisa dimodifikasi sesuai kebutuhan edukasi.</p>
+                </div>
+            </div>
+
+            <button onclick="backToHome()">Kembali ke Beranda <span class="emoji">🏠</span></button>
+        </section>
+    </div>
+
+    <script>
+        // Fungsi untuk kembali ke beranda
+        function backToHome() {
+            alert("Terima kasih telah belajar! Kembali ke Beranda ya! 🎉");
+            document.querySelector('a[href="#beranda"]').click();
+        }
+
+        // Tambahkan efek suara simulasi (ganti dengan audio jika ada)
+        function playSound(type) {
+            console.log(`Playing ${type} sound`);
+        }
+    </script>
+    <script>
+        const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+
+        document.querySelectorAll("nav a").forEach(link => {
+            const href = link.getAttribute("href").toLowerCase();
+            if (href === currentPage) {
+                link.classList.add("active");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

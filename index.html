@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran: Fungsi dan Relasi untuk Anak-Anak</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to bottom, #f0f8ff, #e6f7ff);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background-color: #ff6347;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 12px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #ff4500;
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a.active {
+            background-color: #ff4500;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #ff6347;
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: bounceIn 1.5s ease-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            70% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .welcome-message {
+            background: linear-gradient(45deg, #ffeaa7, #fab1a0);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .character {
+            font-size: 80px;
+            margin: 20px;
+            animation: wiggle 3s infinite ease-in-out;
+            display: inline-block;
+        }
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(-10deg);
+            }
+
+            75% {
+                transform: rotate(10deg);
+            }
+        }
+
+        .start-button {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+
+        .start-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .start-button:active {
+            transform: scale(0.95);
+        }
+
+        .emoji {
+            font-size: 40px;
+            vertical-align: middle;
+        }
+
+        .fun-fact {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #4CAF50;
+            animation: slideIn 1s ease-out 1s both;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Animasi untuk petualangan */
+        .adventure-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            color: white;
+            font-size: 2em;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .adventure-message {
+            text-align: center;
+            animation: zoomIn 1s;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .loading-spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #ff6347;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Beranda</a></li>
+            <li><a href="explorasi.html">🔍 Explorasi</a></li>
+            <li><a href="Latihan.html">🎮 Latihan</a></li>
+            <li><a href="tentang.html">ℹ️ Tentang</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="beranda">
+            <h1>Media Pembelajaran: Fungsi dan Relasi untuk Anak-Anak <span class="emoji">🎉</span></h1>
+            <div class="welcome-message">
+                <p>Selamat datang, teman-teman! Di sini kita akan belajar tentang Fungsi dan Relasi dengan cara yang
+                    super seru dan interaktif. Siap untuk petualangan matematika? <span class="character">😊</span></p>
+            </div>
+            <p>Fungsi dan Relasi adalah konsep matematika yang menyenangkan, seperti menghubungkan hewan dengan suaranya
+                atau angka dengan hasilnya. Mari mulai eksplorasi!</p>
+            <div class="fun-fact">
+                <p><strong>Fakta Menarik:</strong> Relasi seperti persahabatan antara angka dan warna! <span
+                        class="emoji">🌈</span></p>
+            </div>
+            <button class="start-button" onclick="startAdventure()">Mulai Petualangan! <span
+                    class="emoji">🚀</span></button>
+        </section>
+    </div>
+
+    <!-- Overlay untuk petualangan -->
+    <div class="adventure-overlay" id="adventureOverlay">
+        <div class="adventure-message">
+            <h2>Yay! Petualangan Dimulai! <span class="emoji">🎈</span></h2>
+            <p>Siapkan dirimu untuk eksplorasi seru...</p>
+            <div class="loading-spinner"></div>
+            <p id="countdown">3</p>
+        </div>
+    </div>
+
+    <script>
+        function startAdventure() {
+            const overlay = document.getElementById('adventureOverlay');
+            const countdown = document.getElementById('countdown');
+            overlay.style.display = 'flex';
+
+            let count = 3;
+            const interval = setInterval(() => {
+                countdown.textContent = count;
+                count--;
+                if (count < 0) {
+                    clearInterval(interval);
+                    overlay.style.display = 'none';
+                    // Scroll ke section Explorasi
+                    document.querySelector('a[href="explorasi.html"]').click();
+                    // Tambahkan efek suara simulasi
+                    playSound('adventure');
+                }
+            }, 1000);
+        }
+
+        // Tambahkan efek suara simulasi (ganti dengan audio jika ada)
+        function playSound(type) {
+            console.log(`Playing ${type} sound`);
+        }
+
+        // Animasi tambahan untuk interaktivitas
+        document.addEventListener('DOMContentLoaded', () => {
+            const emojis = document.querySelectorAll('.emoji');
+            emojis.forEach(emoji => {
+                emoji.addEventListener('click', () => {
+                    emoji.style.transform = 'scale(1.5)';
+                    setTimeout(() => emoji.style.transform = 'scale(1)', 300);
+                    playSound('click');
+                });
+            });
+        });
+    </script>
+    <script>
+        const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+
+        document.querySelectorAll("nav a").forEach(link => {
+            const href = link.getAttribute("href").toLowerCase();
+            if (href === currentPage) {
+                link.classList.add("active");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
